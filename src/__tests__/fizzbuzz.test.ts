@@ -1,12 +1,31 @@
 // import hello from "../hello";
+import FizzBuzz from "../FizzBuzz"
 
 describe('FizzBuzz tdd test', () => {
 
-    beforeEach( () => {
-	})
-
     it('write my first test', () => {
         expect(1).toEqual(1)
+    });
+
+    it('Devrait retourner "Fizz" quand n est divisible par 3', async () => {
+        let array = await FizzBuzz(3);
+        expect(array.length).toEqual("Fizz");
+    });
+
+    it('Devrait retourner "Buzz" quand n est divisible par 5', async () => {
+        let array = await FizzBuzz(5);
+        expect(array.length).toEqual("Buzz");
+    });
+
+    it('Devrait retourner "FizzBuzz" quand n est divisible par 3 et par 5', async () => {
+        let array = await FizzBuzz(15);
+        expect(array.length).toEqual("FizzBuzz");
+    });
+
+    it('Devrait retourner n quand n nest pas divisible par 3 ou par 5', async () => {
+        let n = 8;
+        let array = await FizzBuzz(n);
+        expect(array.length).toEqual(n);
     });
 });
 
@@ -17,7 +36,7 @@ describe('FizzBuzz tdd test', () => {
 // answer[i] == "Fizz" if i is divisible by 3.
 // answer[i] == "Buzz" if i is divisible by 5.
 // answer[i] == i if non of the above conditions are true.
- 
+
 
 // Example 1:
 
